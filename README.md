@@ -25,8 +25,8 @@ Effects have been tested on Chrome and Firefox only. Safari doesn't support CSS 
 
 ## Credits
 
-[Bourbon](http://bourbon.io/)
-[TweenMax](http://greensock.com) by Jack Doyle.
+- [Bourbon](http://bourbon.io/)
+- [TweenMax](http://greensock.com) by Jack Doyle.
 
 ## Misc
 

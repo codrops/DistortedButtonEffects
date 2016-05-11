@@ -1,10 +1,10 @@
-# Creative 
+# Distorted Button Effects
 
 A set of inspirational, highly experimental distortion effects for buttons using SVG filters. By Adrien Denat.
 
 [Article on Codrops](http://tympanus.net/codrops/?p=26866)
 
-[Demo](http://tympanus.net/Development/DistortedButtons/)
+[Demo](http://tympanus.net/Development/DistortedButtonEffects/)
 
 ## License
 

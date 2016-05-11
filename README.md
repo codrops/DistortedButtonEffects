@@ -27,6 +27,7 @@ Effects have been tested on Chrome and Firefox only. Safari doesn't support CSS 
 
 - [Bourbon](http://bourbon.io/)
 - [TweenMax](http://greensock.com) by Jack Doyle.
+- [Chris Biron](https://dribbble.com/shots/2544738-Not-your-average-button) for button 01 design
 
 ## Misc
 

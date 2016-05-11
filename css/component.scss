@@ -88,7 +88,7 @@ $action-color: $green;
     height: 25%;
     top: 50%;
     left: 25%;
-    transform: translateY(-50%);
+    @include transform(translateY(-50%));
   }
 
   .circle {

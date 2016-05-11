@@ -1,0 +1,318 @@
+@font-face {
+	font-family: 'codropsicons';
+	font-weight: normal;
+	font-style: normal;
+	src: url('../fonts/codropsicons/codropsicons.eot');
+	src: url('../fonts/codropsicons/codropsicons.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/codropsicons/codropsicons.woff') format('woff'),
+	url('../fonts/codropsicons/codropsicons.ttf') format('truetype'),
+	url('../fonts/codropsicons/codropsicons.svg#codropsicons') format('svg');
+}
+
+*,
+*:after,
+*:before {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.clearfix:before,
+.clearfix:after {
+	content: ''; 
+	display: table;
+}
+.clearfix:after {
+	clear: both;
+}
+
+body {
+	font-family: Avenir, 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif;
+	color: #222;
+	background: #f6f6f6;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+a {
+	text-decoration: none;
+	color: #aaa;
+	outline: none;
+}
+
+a:hover,
+a:focus {
+	color: #333;
+}
+
+.container {
+	position: relative;
+	overflow: hidden;
+}
+
+.hidden {
+	position: absolute;
+	overflow: hidden;
+	width: 0;
+	height: 0;
+	pointer-events: none;
+}
+
+.github-corner {
+	cursor: pointer;
+}
+
+.github-corner:hover .octo-arm {
+	-webkit-animation: octocat-wave 560ms ease-in-out;
+	animation: octocat-wave 560ms ease-in-out;
+}
+
+@-webkit-keyframes octocat-wave {
+	0%,
+	100% {
+		-webkit-transform: rotate(0);
+		transform: rotate(0);
+	}
+
+	20%,
+	60% {
+		-webkit-transform: rotate(-25deg);
+		transform: rotate(-25deg);
+	}
+
+	40%,
+	80% {
+		-webkit-transform: rotate(10deg);
+		transform: rotate(10deg);
+	}
+}
+
+@keyframes octocat-wave {
+	0%,
+	100% {
+		-webkit-transform: rotate(0);
+		transform: rotate(0);
+	}
+
+	20%,
+	60% {
+		-webkit-transform: rotate(-25deg);
+		transform: rotate(-25deg);
+	}
+
+	40%,
+	80% {
+		-webkit-transform: rotate(10deg);
+		transform: rotate(10deg);
+	}
+}
+
+@media (max-width:500px) {
+	.github-corner:hover .octo-arm {
+		-webkit-animation: none;
+		animation: none;
+	}
+
+	.github-corner .octo-arm {
+		-webkit-animation: octocat-wave 560ms ease-in-out;
+		animation: octocat-wave 560ms ease-in-out;
+	}
+}
+
+/* Header */
+.codrops-header {
+	padding: 2em 10vw 8em;
+}
+
+.codrops-header h1 {
+	font-size: 4em;
+	line-height: 0.9;
+	letter-spacing: -0.05em;
+	margin: 0.5em 0 0;
+}
+
+.codrops-header h1 span {
+	font-size: 0.25em;
+	display: block;
+	padding: 0.5em 0 0 0.15em;
+	line-height: 1.5;
+	color: #999;
+	letter-spacing: 15px;
+	text-transform: uppercase;
+}
+
+/* Top Navigation Style */
+.codrops-links {
+	position: relative;
+	display: inline-block;
+	text-align: center;
+	white-space: nowrap;
+}
+
+.codrops-links::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 1px;
+	height: 100%;
+	background: rgba(0,0,0,0.1);
+	-webkit-transform: rotate3d(0,0,1,22.5deg);
+	transform: rotate3d(0,0,1,22.5deg);
+}
+
+.codrops-icon {
+	display: inline-block;
+	width: 1.5em;
+	margin: 0.5em;
+	padding: 0em 0;
+	text-decoration: none;
+}
+
+.codrops-icon span {
+	display: none;
+}
+
+.codrops-icon:before {
+	font-family: 'codropsicons';
+	font-weight: normal;
+	font-style: normal;
+	font-variant: normal;
+	line-height: 1;
+	margin: 0 5px;
+	text-transform: none;
+	speak: none;
+	-webkit-font-smoothing: antialiased;
+}
+
+.codrops-icon--drop:before {
+	content: '\e001';
+	color: #09c;
+}
+
+.codrops-icon--prev:before {
+	content: '\e004';
+}
+
+/* Demo links */
+.codrops-demos {
+	margin: 2em 0 0;
+}
+
+.codrops-demos a {
+	display: inline-block;
+	margin: 0 0.5em;
+}
+
+.codrops-demos a.current-demo {
+	color: #333;
+}
+
+/* Content */
+.content {
+	width: 100%;
+	text-align: center;
+	@include display(flex);
+	@include justify-content(center);
+	@include align-items(center);
+	@include flex-wrap(wrap);
+}
+
+/* Related demos */
+.content--related {
+	font-weight: bold;
+	text-align: center;
+	display: block;
+	color: #f6f6f6;
+	background: #222;
+	padding: 5em 1em;
+}
+
+.media-item {
+	display: inline-block;
+	padding: 1em;
+	vertical-align: top;
+	-webkit-transition: color 0.3s;
+	transition: color 0.3s;
+}
+
+.media-item__img {
+	max-width: 100%;
+	opacity: 0.3;
+	-webkit-transition: opacity 0.3s;
+	transition: opacity 0.3s;
+}
+
+.media-item:hover .media-item__img,
+.media-item:focus .media-item__img {
+	opacity: 1;
+}
+
+.media-item__title {
+	font-size: 1em;
+	margin: 0;
+	padding: 0.5em;
+}
+
+.media-item:hover .media-item__title,
+.media-item:focus .media-item__title {
+	color: #fff;
+}
+
+.section {
+	min-height: 400px;
+	width: calc(50% - 20vw);
+	min-width: 300px;
+	height: 50vh;
+	margin: 0 10vw;
+	@include display(flex);
+	@include flex(none);
+	@include flex-direction(column);
+	@include align-items(center);
+}
+
+.safari-warning {
+	display: none;
+	color: #ff6e00;
+	.safari & {
+		display: block;
+	}
+}
+
+.section__title {
+	font-size: 5em;
+	font-weight: 900;
+	letter-spacing: -0.05em;
+	margin: 0 0 1em 0;
+	color: #ddd;
+	position: relative;
+	text-align: left;
+	width: 100%;
+}
+
+.section__title::before {
+	content: '';
+	position: absolute;
+	top: 1.15em;
+	width: 40%;
+	height: 0.1em;
+	background: #ddd;
+	left: 0;
+}
+
+h5 {
+	margin-top: 6em;
+	margin-bottom: -4em;
+}
+
+@media screen and (max-width: 40em) {
+	.codrops-header {
+		padding: 2em 3vw;
+	}
+	.codrops-header h1 {
+		font-size: 2.8em;
+	}
+	.section {
+		margin: 0;
+		width: 100%;
+		padding: 0 3vw;
+	}
+}

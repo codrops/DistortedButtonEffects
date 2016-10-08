@@ -30,13 +30,24 @@ initBt10();
 // Button 1
 function initBt1() {
   var bt1 = document.querySelectorAll('#component-1')[0];
+  var bt1c = document.querySelector('.button__container');
   var $circlesTopLeft = bt1.querySelectorAll('.circle.top-left');
   var $circlesBottomRight = bt1.querySelectorAll('.circle.bottom-right');
+
+  var filter = document.querySelectorAll('#filter-goo-1 feGaussianBlur')[0];
 
   var tl = new TimelineLite();
   var tl2 = new TimelineLite();
 
-  var btTl = new TimelineLite({ paused: true });
+  var btTl = new TimelineLite({ 
+    paused: true, 
+    onUpdate: function() {
+      filter.setAttribute('x', 0);
+    },
+    onComplete: function() {
+      bt1c.style.filter = 'none';
+    } 
+  });
 
   tl.to($circlesTopLeft, 1.2, { x: -25, y: -25, scaleY: 2, ease: SlowMo.ease.config(0.1, 0.7, false) });
   tl.to($circlesTopLeft[0], 0.1, { scale: 0.2, x: '+=6', y: '-=2' });
@@ -71,6 +82,7 @@ function initBt1() {
   btTl.timeScale(2.6);
 
   bt1.addEventListener('click', function() {
+    bt1c.style.filter = 'url(#filter-goo-1)';
     btTl.restart();
   });
 }
@@ -79,12 +91,15 @@ function initBt1() {
 // Button 2
 function initBt2() {
   var bt = document.querySelectorAll('#component-2')[0];
+  var filter = document.querySelectorAll('#filter-goo-2 feGaussianBlur')[0];
   var particleCount = 12;
   var colors = ['#DE8AA0', '#8AAEDE', '#FFB300', '#60C7DA']
 
   bt.addEventListener('click', function() {
     var particles = [];
-    var tl = new TimelineLite();
+    var tl = new TimelineLite({onUpdate: function() {
+      filter.setAttribute('x', 0);
+    }});
     
     tl.to(bt.querySelectorAll('.button__bg'), 0.6, { scaleX: 1.05 });
     tl.to(bt.querySelectorAll('.button__bg'), 0.9, { scale: 1, ease: Elastic.easeOut.config(1.2, 0.4) }, 0.6);
@@ -120,6 +135,7 @@ function initBt3() {
   var particleCount = 6;
   var particles;
   var clicked = false;
+  var filter = document.querySelector('#filter-goo-3 feGaussianBlur');
 
   bt.addEventListener('mouseenter', function() {
     particles = [];
@@ -137,6 +153,8 @@ function initBt3() {
 
       tl.to(particles[i], 2, { x: dir + 18, scaleX: 1.4, ease: Expo.easeOut });
     }
+
+    TweenLite.to(filter, 1.5, { onUpdate: function() { filter.setAttribute('x', 0); }});
   });
 
   bt.addEventListener('mouseleave', function() {
@@ -151,6 +169,8 @@ function initBt3() {
         this.target.parentNode.removeChild(this.target);
       } });
     }
+
+    TweenLite.to(filter, 1.5, { onUpdate: function() { filter.setAttribute('x', 0); }});
   });
 
   bt.addEventListener('click', function() {
@@ -183,6 +203,7 @@ function initBt4() {
   var bt = document.querySelectorAll('#component-4')[0];
   var bg = document.querySelectorAll('#component-4 .button')[0];
   var blob = document.querySelectorAll('#component-4 .blob');
+  var filter = document.querySelector('#filter-goo-4 feGaussianBlur');
 
   bt.addEventListener('mousemove', function(e) {
     var x = (e.pageX - bt.offsetLeft - bt.offsetWidth / 2) * 0.6;
@@ -191,6 +212,7 @@ function initBt4() {
     TweenLite.to(blob[1], 4.2, { x: x, y: y, ease: Elastic.easeOut.config(1, 0.1) });
     TweenLite.to(blob[2], 2.8, { x: x, y: -y, ease: Elastic.easeOut.config(1, 0.1) });
     TweenLite.to(blob[3], 2.8, { x: -x, y: -y, ease: Elastic.easeOut.config(1, 0.1) });
+    TweenLite.to(filter, 5, { onUpdate: function() { filter.setAttribute('x', 0); }});
   });
 
   bt.addEventListener('mouseup', function(e) {
@@ -214,9 +236,17 @@ function initBt5() {
   var bt = document.querySelectorAll('#component-5')[0];
   var turbVal = { val: 0.000001 };
   var turb = document.querySelectorAll('#filter-glitch-1 feTurbulence')[0];
-  var btTl = new TimelineLite({ paused: true, onUpdate: function() {
-    turb.setAttribute('baseFrequency', turbVal.val);
-  } });
+  var btTl = new TimelineLite({ 
+    paused: true, 
+    onStart: function() {
+      bt.style.filter = 'url(#filter-glitch-1)';
+    },
+    onUpdate: function() {
+      turb.setAttribute('baseFrequency', turbVal.val);
+    },
+    onComplete: function() {
+      bt.style.filter = 'none';
+    } });
 
   btTl.to(turbVal, 0.2, { val: 0.04 });
   btTl.to(turbVal, 0.2, { val: 0.000001 });
@@ -233,7 +263,13 @@ function initBt6() {
   var turb = document.querySelectorAll('#filter-glitch-2 feTurbulence')[0];
   var btTl = new TimelineLite({ paused: true, onUpdate: function() {
     turb.setAttribute('baseFrequency', '0.00001 ' + turbVal.val); // Firefox bug is value is 0
-  } });
+  },
+  onStart: function() {
+    bt.style.filter = 'url(#filter-glitch-2)';
+  },
+  onComplete: function() {
+    bt.style.filter = 'none';
+  }});
 
   btTl.to(turbVal, 0.2, { val: 0.06 });
   btTl.to(turbVal, 0.2, { val: 0.000001 });
@@ -250,6 +286,12 @@ function initBt7() {
   var turb = document.querySelectorAll('#filter-glitch-3 feTurbulence')[0];
   var btTl = new TimelineLite({ paused: true, onUpdate: function() {
     turb.setAttribute('baseFrequency', '0.00001 ' + turbVal.val); // Firefox bug is value is 0
+  },
+  onStart: function() {
+    bt.style.filter = 'url(#filter-glitch-3)';
+  },
+  onComplete: function() {
+    bt.style.filter = 'none';
   } });
 
   btTl.to(turbVal, 0.4, { val: 0.4 });
@@ -290,13 +332,15 @@ function initBt9() {
 function initBt10() {
   var bt = document.querySelectorAll('#component-10')[0];
   var btTxt = bt.querySelector('.button__text');
+  var btBg = bt.querySelector('.button__bg');
   var isPlaying = false;
   var turbVal = { val: 0.000001 };
   var turbValX = { val: 0.000001 };
   var turb = document.querySelectorAll('#filter-music feTurbulence')[0];
   var btTl = new TimelineLite({ paused: true, onUpdate: function() {
     turb.setAttribute('baseFrequency', turbVal.val + ' ' + turbValX.val);
-  }, onComplete: function() { 
+  },
+  onComplete: function() { 
     btTl.reverse();
   }, onReverseComplete: function() {
     btTl.restart();
@@ -315,10 +359,12 @@ function initBt10() {
       btTl2.to(turbVal, 0.1, { val: 0.000001 });
       btTl2.to(turbValX, 0.1, { val: 0.000001 }, 0);
       isPlaying = false;
+      btBg.style.filter = 'none';
     } else {
       btTxt.textContent = 'Pause';
       btTl.play();
       isPlaying = true;
+      btBg.style.filter = 'url(#filter-music)';
     }
   });
 }

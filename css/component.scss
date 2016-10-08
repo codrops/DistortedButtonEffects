@@ -69,8 +69,6 @@ $action-color: $green;
     height: 400%;
     top: -150%;
     left: -50%;
-    -webkit-filter: url("#filter-goo-1");
-    filter: url("../#filter-goo-1");
     pointer-events: none;
     z-index: -1;
     @include transform(translateZ(0));
@@ -117,8 +115,6 @@ $action-color: $green;
   position: relative;
   z-index: 0;
   background-color: transparent;
-  -webkit-filter: url("#filter-goo-3");
-  filter: url("../#filter-goo-3");
   
   .left, .right {
     position: absolute;
@@ -190,8 +186,6 @@ $action-color: $green;
     width: 100%;
     height: 100%;
     outline: 90px solid transparent!important; // this makes the area of effect of the filter bigger. This doesn't change anything on Firefox.
-    -webkit-filter: url("#filter-goo-4");
-    filter: url("../#filter-goo-4");
     @extend %button;
     padding: 0;
     border-radius: 100px;
@@ -237,24 +231,18 @@ $action-color: $green;
   @extend %button;
   transform: translateZ(0);
   outline: 90px solid transparent!important; // this makes the area of effect of the filter bigger. This doesn't change anything on Firefox.
-  -webkit-filter: url("#filter-glitch-1");
-  filter: url("../#filter-glitch-1");
 }
 
 .button--6 {
   @extend %button;
   transform: translateZ(0);
   outline: 90px solid transparent!important; // this makes the area of effect of the filter bigger. This doesn't change anything on Firefox.
-  -webkit-filter: url("#filter-glitch-2");
-  filter: url("../#filter-glitch-2");
 }
 
 .button--7 {
   @extend %button;
   transform: translateZ(0);
   outline: 90px solid transparent!important; // this makes the area of effect of the filter bigger. This doesn't change anything on Firefox.
-  -webkit-filter: url("#filter-glitch-3");
-  filter: url("../#filter-glitch-3");
 }
 
 .button--8 {
@@ -265,8 +253,6 @@ $action-color: $green;
   background: #F6F6F6;
   border: 2px solid #000;
   color: #000;
-  -webkit-filter: url("#filter-ripple-1");
-  filter: url("../#filter-ripple-1");
 
   &:focus {
     color: $dark-blue;
@@ -290,8 +276,6 @@ $action-color: $green;
   height: 80px;
   line-height: 80px;
   padding: 0;
-  -webkit-filter: url("#filter-ripple-2");
-  filter: url("../#filter-ripple-2");
 
   &:focus {
     color: #FFF;
@@ -329,8 +313,6 @@ $action-color: $green;
     bottom: 0;
     z-index: -1;
     @include transition(background 0.1s ease-out);
-    -webkit-filter: url("#filter-music");
-    filter: url("../#filter-music");
     border-radius: 40px;
   }
 }

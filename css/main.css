@@ -366,8 +366,6 @@ h5 {
     height: 400%;
     top: -150%;
     left: -50%;
-    -webkit-filter: url("#filter-goo-1");
-    filter: url("../#filter-goo-1");
     pointer-events: none;
     z-index: -1;
     -webkit-transform: translateZ(0);
@@ -413,9 +411,7 @@ h5 {
   outline: 90px solid transparent !important;
   position: relative;
   z-index: 0;
-  background-color: transparent;
-  -webkit-filter: url("#filter-goo-3");
-  filter: url("../#filter-goo-3"); }
+  background-color: transparent; }
   .button--2 .left, .button--2 .right {
     position: absolute;
     width: 25px;
@@ -470,8 +466,6 @@ h5 {
     width: 100%;
     height: 100%;
     outline: 90px solid transparent !important;
-    -webkit-filter: url("#filter-goo-4");
-    filter: url("../#filter-goo-4");
     padding: 0;
     border-radius: 100px;
     -webkit-transform: translateZ(0);
@@ -512,21 +506,15 @@ h5 {
 
 .button--5 {
   transform: translateZ(0);
-  outline: 90px solid transparent !important;
-  -webkit-filter: url("#filter-glitch-1");
-  filter: url("../#filter-glitch-1"); }
+  outline: 90px solid transparent !important; }
 
 .button--6 {
   transform: translateZ(0);
-  outline: 90px solid transparent !important;
-  -webkit-filter: url("#filter-glitch-2");
-  filter: url("../#filter-glitch-2"); }
+  outline: 90px solid transparent !important; }
 
 .button--7 {
   transform: translateZ(0);
-  outline: 90px solid transparent !important;
-  -webkit-filter: url("#filter-glitch-3");
-  filter: url("../#filter-glitch-3"); }
+  outline: 90px solid transparent !important; }
 
 .button--8 {
   position: relative;
@@ -534,9 +522,7 @@ h5 {
   outline: 10px solid #F6F6F6 !important;
   background: #F6F6F6;
   border: 2px solid #000;
-  color: #000;
-  -webkit-filter: url("#filter-ripple-1");
-  filter: url("../#filter-ripple-1"); }
+  color: #000; }
   .button--8:focus {
     color: #222; }
   .button--8:hover {
@@ -556,9 +542,7 @@ h5 {
   width: 80px;
   height: 80px;
   line-height: 80px;
-  padding: 0;
-  -webkit-filter: url("#filter-ripple-2");
-  filter: url("../#filter-ripple-2"); }
+  padding: 0; }
   .button--9:focus {
     color: #FFF; }
   .button--9:hover {
@@ -588,8 +572,6 @@ h5 {
     -webkit-transition: background 0.1s ease-out;
     -moz-transition: background 0.1s ease-out;
     transition: background 0.1s ease-out;
-    -webkit-filter: url("#filter-music");
-    filter: url("../#filter-music");
     border-radius: 40px; }
 
 @keyframes hue-rotate {
